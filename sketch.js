@@ -64,9 +64,9 @@ function setup() {
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
   StrtGmeBtn = createButton("Add and Start") //create a button that will add a team and start the game
+  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
   AddTeamBtn = createButton("Add Another") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
-  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
   canvas = createCanvas(backWidth * loc.scle, backHeight * loc.scle); // make a canvas the size of the image
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
