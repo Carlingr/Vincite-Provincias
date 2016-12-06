@@ -99,9 +99,3 @@ function draw() {
     owners[i].printTitle(i * (titleSize + 6)) //put the owners in the corner
   }
 }
-
-function mousePressed() { //when the mouse is pressed
-  for (var i = 0; i < countries.length; i++) { //go through the countries
-    countries[i].invade() //if a country is clicked, invade it.
-  }
-}
