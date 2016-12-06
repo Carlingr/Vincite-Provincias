@@ -24,11 +24,11 @@ function Country(name, img, x, y) {
 function Owner(name, col) {
   this.name = name
   this.col = col
-  this.printTitle = function(y) {// puts the title in the upper right corner, takes a y so that they will be listed.
+  this.printTitle = function(y) {// puts the title in the upper right corner, takes a y so that they will not overlap.
     stroke("black")// make a black edge. 
     textSize(titleSize + 5);// make the text bigger
     fill(this.col) //fill with the color of the team
-    textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
-    text(this.name, width * (.99 / loc.scle), y + (loc.scle * 5)) //whats your name man?
+    textAlign(RIGHT, BOTTOM) // make the text go where it belongs
+    text(this.name, width * loc.scle, y + (loc.scle * 5)) //whats your name man?
   }
 }
