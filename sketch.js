@@ -71,13 +71,13 @@ function setup() {
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
     //<housekeeping>
-  scale(loc.scle) // set the scale to the scale determined
   titleSize = 20 // set the title size
   angleMode(DEGREES) //make my head hurt less
     //<end housekeeping>
 }
 
 function draw() {
+  scale(loc.scle) // set the scale to the scale determined
   image(back, loc.x, loc.y) //put a map up
     //<add the countries>
   for (var i = 0; i < countries.length; i++) {
