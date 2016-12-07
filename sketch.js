@@ -8,6 +8,9 @@ var loc = { // these are used to scale to screen
 };
 var titleSize //how big the text will be
 
+var backWidth = 992;
+var backHeight = 687;
+
 //<variabes for holding DOM elements>, used in setup
 var nameInput
 var StrtGmeBtn
@@ -52,8 +55,6 @@ function preload() {
 }
 
 function setup() {
-  var backWidth = 992;
-  var backHeight = 687;
   //<scale canvas>
   if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
     loc.scle = windowWidth / backWidth; // use the width to determine the scale
@@ -64,7 +65,7 @@ function setup() {
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
   StrtGmeBtn = createButton("Add and Start") //create a button that will add a team and start the game
-  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
+  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game 
   AddTeamBtn = createButton("Add Another") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
   canvas = createCanvas(backWidth * loc.scle, backHeight * loc.scle); // make a canvas the size of the image
