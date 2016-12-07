@@ -29,6 +29,8 @@ function Owner(name, col) {
     textSize(titleSize + 5); // make the text bigger
     fill(this.col) //fill with the color of the team
     textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
-    text(this.name, back.x * loc.scle, y + (loc.scle * 5)) //whats your name man?
+    text(this.name, backWidth * loc.scle, y + (loc.scle * 5)) //whats your name man?
+    console.log(width)
+    console.log(loc.scle)
   }
 }
