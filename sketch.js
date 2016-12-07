@@ -3,7 +3,7 @@ var countries = []; //this holds the countries (see from line 27)
 var owners = [] //this holds the teams that are playing
 var loc = { // these are used to scale to screen
   x: 0,
-  y: -25,
+  y: 0,
   scle: 1
 };
 var titleSize //how big the text will be
