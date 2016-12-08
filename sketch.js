@@ -16,7 +16,7 @@ var canvas
   //<variabes for holding DOM elements>
 
 function preload() {
-  back = loadImage('images/bckgrnd.png')
+  back = loadImage('images/Bckgrnd.png')
     /*<load country images and create objects for countries>
     input is the following: (name(string), image path(string), X location(int), Y location (int))
     X,Y coordanates will be the center of the place the country name is displayed
@@ -26,7 +26,7 @@ function preload() {
   countries[0] = new Country("Aegyptus", "images/Aegyptus.png", 675, 621)
     //above line creates a country with the name "Aegyptus", where the image of the country can be found at "images/Aegyptus.png", at an X of 675 and a Y of 621
 console.log(countries.length)
-  countries[1] = new Country("Britannia", "images/britn.png", 180, 194)
+  countries[1] = new Country("Britannia", "images/Britn.png", 180, 194)
   console.log(countries.length)
   countries[2] = new Country("Cyprus", "images/Cyprus.png", 728, 514)
   console.log(countries.length)
