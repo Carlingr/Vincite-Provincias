@@ -78,6 +78,7 @@ function setup() {
 }
 
 function draw() {
+  noTint()//make sure the back is not tinted
   image(back, loc.x, loc.y) //put a map up
     //<add the countries>
   for (var i = 0; i < countries.length; i++) {
