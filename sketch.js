@@ -2,8 +2,8 @@ var back; //this holds the background image
 var countries = []; //this holds the countries (see from line 27)
 var owners = [] //this holds the teams that are playing
 var loc = { // these are used to scale to screen
-  x: 0,
-  y: 0,
+  x: -20,
+  y: -25,
   scle: 1
 };
 var titleSize //how big the text will be
@@ -65,10 +65,10 @@ function setup() {
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
   StrtGmeBtn = createButton("Add and Start") //create a button that will add a team and start the game
-  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game 
+  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
   AddTeamBtn = createButton("Add Another") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
-  canvas = createCanvas(backWidth * loc.scle, backHeight * loc.scle); // make a canvas the size of the image
+  canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) - loc.y); // make a canvas the size of the image
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
     //<housekeeping>
@@ -98,5 +98,11 @@ function draw() {
   //</add the names>
   for (i = 1; i < owners.length; i++) { // loop through the owners
     owners[i].printTitle(i * (titleSize + 6)) //put the owners in the corner
+  }
+}
+
+function mousePressed() { //when the mouse is pressed
+  for (var i = 0; i < countries.length; i++) { //go through the countries
+    countries[i].invade() //if a country is clicked, invade it.
   }
 }
