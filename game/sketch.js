@@ -2,11 +2,14 @@ var back; //this holds the background image
 var countries = []; //this holds the countries (see from line 27)
 var owners = [] //this holds the teams that are playing
 var loc = { // these are used to scale to screen
-  x: 0,
+  x: -20,
   y: -25,
   scle: 1
 };
 var titleSize //how big the text will be
+
+var backWidth = 992;
+var backHeight = 687;
 
 //<variabes for holding DOM elements>, used in setup
 var nameInput
@@ -52,8 +55,6 @@ function preload() {
 }
 
 function setup() {
-  var backWidth = 992;
-  var backHeight = 687;
   //<scale canvas>
   if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
     loc.scle = windowWidth / backWidth; // use the width to determine the scale
@@ -67,17 +68,17 @@ function setup() {
   StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
   AddTeamBtn = createButton("Add Another") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
-  canvas = createCanvas(backWidth * loc.scle, backHeight * loc.scle); // make a canvas the size of the image
+  canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) - loc.y); // make a canvas the size of the image
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
     //<housekeeping>
-  scale(loc.scle) // set the scale to the scale determined
   titleSize = 20 // set the title size
   angleMode(DEGREES) //make my head hurt less
     //<end housekeeping>
 }
 
 function draw() {
+  scale(loc.scle) // set the scale to the scale determined
   noTint()//make sure the back is not tinted
   image(back, loc.x, loc.y) //put a map up
     //<add the countries>
