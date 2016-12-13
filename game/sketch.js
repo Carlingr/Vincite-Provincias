@@ -21,35 +21,36 @@ var canvas
 function preload() {
   back = loadImage('images/Bckgrnd.png')
     /*<load country images and create objects for countries>
-    input is the following: (name(string), image path(string), X location(int), Y location (int))
-    X,Y coordanates will be the center of the place the country name is displayed
-    and will be used to determine if the country is clicked.
-    I found the X,Y by using mouseX and mouseY, and fine tuning it from there.
+    input is the following: (name(string), image path(string), Text x location(int), text y location (int), image x location(int), image y location (int))
+    txtX,txyY coordanates will be the center of the place the country name is displayed, and will be used to determine if the country is clicked.
+    I found the txtX,txtY by using mouseX and mouseY, and fine tuning it from there.
+    I found imgX,imgY by first cropping the image to the bottom, left of the country, then noting the image size.
+    I then crop the country, and note the diffrence in size. this is the imgX,imgY
     */
-  countries[0] = new Country("Aegyptus", "images/Aegyptus.png", 675, 621)
-    //above line creates a country with the name "Aegyptus", where the image of the country can be found at "images/Aegyptus.png", at an X of 675 and a Y of 621
-  countries[1] = new Country("Britannia", "images/Britn.png", 180, 194)
-  countries[2] = new Country("Cyprus", "images/Cyprus.png", 728, 514)
-  countries[3] = new Country("Italia", "images/Italia.png", 395, 374)
-  countries[4] = new Country("Sicilia", "images/Sicilia.png", 424, 474)
-  countries[5] = new Country("Cyrenaica", "images/Cyrenaica.png", 488, 601)
-  countries[6] = new Country("Asia Minor", "images/Asia.png", 860, 464)
-  countries[7] = new Country("Caledonia", "images/Caledonia.png", 133, 84)
-  countries[8] = new Country("Germania", "images/Germania.png", 342, 299)
-  countries[9] = new Country("Graecia", "images/Greece.png", 605, 403)
-  countries[10] = new Country("Hispania", "images/Hispania.png", 131, 434)
-  countries[11] = new Country("Iberia", "images/Iberia.png", 95, 378)
-  countries[12] = new Country("Gallia", "images/Gallia.png", 242, 309)
-  countries[13] = new Country("Syria", "images/Syria.png", 657, 456)
-  countries[14] = new Country("Crete", "images/Crete.png", 592, 511)
-  countries[15] = new Country("Iudea", "images/Iudea.png", 770, 533)
-  countries[16] = new Country("Hibernia", "images/Hibernia.png", 81, 164)
-  countries[17] = new Country("Sardinia", "images/Sardinia.png", 346, 431)
-  countries[18] = new Country("Corsica", "images/Corsica.png", 344, 392)
-  countries[19] = new Country("Mauritania", "images/Mauritania.png", 158, 528)
-  countries[20] = new Country("Macedonia", "images/Macedonia.png", 547, 369)
-  countries[21] = new Country("Dacia", "images/Dacia.png", 591, 320)
-  countries[22] = new Country("Pannonia", "images/Pannonia.png", 466, 307)
+  countries[0] = new Country("Aegyptus", "images/Aegyptus.png", 675, 621, 603, 561)
+    //above line creates a country with the name "Aegyptus", where the image of the country can be found at "images/Aegyptus.png", locating the text at 675,621 and the image at 603,561
+  countries[1] = new Country("Asia Minor", "images/Asia.png", 860, 464, 681, 288)
+  countries[2] = new Country("Britannia", "images/Britn.png", 180, 194, 113, 111)
+  countries[3] = new Country("Caledonia", "images/Caledonia.png", 133, 84, 90, 33)
+  countries[4] = new Country("Corsica", "images/Corsica.png", 344, 392, 338, 381)
+  countries[5] = new Country("Crete", "images/Crete.png", 592, 511, 574, 506)
+  countries[6] = new Country("Cyprus", "images/Cyprus.png", 728, 514, 713, 508)
+  countries[7] = new Country("Cyrenaica", "images/Cyrenaica.png", 488, 601, 296, 482)
+  countries[8] = new Country("Dacia", "images/Dacia.png", 591, 320, 549, 262)
+  countries[9] = new Country("Gallia", "images/Gallia.png", 242, 309, 127, 196)
+  countries[10] = new Country("Germania", "images/Germania.png", 342, 299, 273, 159)
+  countries[11] = new Country("Graecia", "images/Greece.png", 605, 403, 508, 376)
+  countries[12] = new Country("Hibernia", "images/Hibernia.png", 81, 164, 38, 127)
+  countries[13] = new Country("Hispania", "images/Hispania.png", 131, 434, 52, 380)
+  countries[14] = new Country("Iberia", "images/Iberia.png", 95, 378, 56, 365)
+  countries[15] = new Country("Italia", "images/Italia.png", 395, 374, 308, 302)
+  countries[16] = new Country("Iudea", "images/Iudea.png", 770, 533, 754, 482)
+  countries[17] = new Country("Macedonia", "images/Macedonia.png", 547, 369, 472, 333)
+  countries[18] = new Country("Mauritania", "images/Mauritania.png", 158, 528, 59, 486)
+  countries[19] = new Country("Pannonia", "images/Pannonia.png", 466, 307, 323, 260)
+  countries[20] = new Country("Sardinia", "images/Sardinia.png", 346, 431, 331, 411)
+  countries[21] = new Country("Sicilia", "images/Sicilia.png", 424, 474, 399, 463)
+  countries[22] = new Country("Syria", "images/Syria.png", 657, 456, 615, 396)
     //</load country images and create objects>
   owners[0] = new Owner("Unowned", "white") // creates an Owner that can be given to unowned countries
 }
@@ -68,7 +69,7 @@ function setup() {
   StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
   AddTeamBtn = createButton("Add Another") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
-  canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) - loc.y); // make a canvas the size of the image
+  canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y + 5); // make a canvas the size of the image, 5 is needed because bugs
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
     //<housekeeping>
@@ -78,13 +79,14 @@ function setup() {
 }
 
 function draw() {
+  background("pink")
   scale(loc.scle) // set the scale to the scale determined
-  noTint()//make sure the back is not tinted
+  noTint() //make sure the back is not tinted
   image(back, loc.x, loc.y) //put a map up
     //<add the countries>
   for (var i = 0; i < countries.length; i++) {
     tint(owners[countries[i].owner].col) //mkae the country the color of its owner
-    image(countries[i].img, loc.x, loc.y) //add the country
+    image(countries[i].img, countries[i].imgX + loc.x, countries[i].imgY + loc.x) //add the country
   }
   //<add the countries>
   //Loops are seperated so that countres do not cover other countries names
@@ -94,7 +96,7 @@ function draw() {
   textSize(titleSize); //make the text size
   textAlign(CENTER, CENTER) //make the text centered
   for (i = 0; i < countries.length; i++) { // loop through the countries
-    text(countries[i].name, countries[i].x + loc.x, countries[i].y + loc.y) //put the name on top of the country
+    text(countries[i].name, countries[i].txtX + loc.x, countries[i].txtY + loc.y) //put the name on top of the country
   }
   //</add the names>
   for (i = 1; i < owners.length; i++) { // loop through the owners

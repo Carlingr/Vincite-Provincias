@@ -10,5 +10,5 @@ function windowResized() {
   } else { //if the limiting dimention is height
     loc.scle = windowHeight / backHeight; // use the height to determine the scale
   }
-  resizeCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) - loc.y);
+  resizeCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y); //make the canvas fit the background
 }
