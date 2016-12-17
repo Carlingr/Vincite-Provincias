@@ -79,7 +79,6 @@ function setup() {
 }
 
 function draw() {
-  background("pink")
   scale(loc.scle) // set the scale to the scale determined
   noTint() //make sure the back is not tinted
   image(back, loc.x, loc.y) //put a map up
