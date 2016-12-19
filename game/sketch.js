@@ -17,7 +17,6 @@ var StrtGmeBtn
 var AddTeamBtn
 var canvas
 var infoP
-var infoPcont //holds contents of the infoP
   //<variabes for holding DOM elements>
 
 function preload() {
