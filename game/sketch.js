@@ -16,6 +16,8 @@ var nameInput
 var StrtGmeBtn
 var AddTeamBtn
 var canvas
+var infoP
+var infoPcont //holds contents of the infoP
   //<variabes for holding DOM elements>
 
 function preload() {
@@ -65,10 +67,11 @@ function setup() {
   //</scale canvas>
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
-  StrtGmeBtn = createButton("Add and Start") //create a button that will add a team and start the game
-  StrtGmeBtn.mousePressed(lstTeam) // if the button is pressed make a team with the team name entered and start the game
-  AddTeamBtn = createButton("Add Another") //create a button that just adds the team
+  AddTeamBtn = createButton("Add Team") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
+  StrtGmeBtn = createButton("Start Game") //create a button that will add a team and start the game
+  StrtGmeBtn.mousePressed(strtGme) // if the button is pressed make a team with the team name entered and start the game
+  infoP = createP("")
   canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y + 5); // make a canvas the size of the image, 5 is needed because bugs
   canvas.hide() //hide the canvas, will be shown when game starts
     //</mess with the DOM stuff>
