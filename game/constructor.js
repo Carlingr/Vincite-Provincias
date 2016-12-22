@@ -27,10 +27,10 @@ function Owner(name, col) {
   this.name = name
   this.col = col
   this.printTitle = function(y) { // puts the title in the upper right corner, takes a y so that they will be listed.
-    stroke("black") // make a black edge. 
-    textSize(titleSize + 5); // make the text bigger
+   //stroke("black") // make a black edge. 
+    textSize(titleSize + 15); // make the text bigger
     fill(this.col) //fill with the color of the team
     textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
-    text(this.name, (width / loc.scle) - 5, y + (loc.scle * 5)) //whats your name man?
+    text(this.name, (width / loc.scle) - 15, y + (loc.scle * 5)+10) //whats your name man?
   }
 }

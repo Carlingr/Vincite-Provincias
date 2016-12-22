@@ -35,7 +35,7 @@ function preload() {
   countries[3] = new Country("Caledonia", "images/Caledonia.png", 133, 84, 90, 33)
   countries[4] = new Country("Corsica", "images/Corsica.png", 344, 392, 338, 381)
   countries[5] = new Country("Crete", "images/Crete.png", 592, 511, 574, 506)
-  countries[6] = new Country("Cyprus", "images/Cyprus.png", 728, 514, 713, 508)
+  countries[6] = new Country("Cyprus", "images/Cyprus.png", 728, 512, 713, 508)
   countries[7] = new Country("Cyrenaica", "images/Cyrenaica.png", 488, 601, 296, 482)
   countries[8] = new Country("Dacia", "images/Dacia.png", 591, 320, 549, 262)
   countries[9] = new Country("Gallia", "images/Gallia.png", 242, 309, 127, 196)
@@ -45,7 +45,7 @@ function preload() {
   countries[13] = new Country("Hispania", "images/Hispania.png", 131, 434, 52, 380)
   countries[14] = new Country("Iberia", "images/Iberia.png", 95, 378, 56, 365)
   countries[15] = new Country("Italia", "images/Italia.png", 395, 374, 308, 302)
-  countries[16] = new Country("Iudea", "images/Iudea.png", 770, 533, 754, 482)
+  countries[16] = new Country("Iudea", "images/Iudea.png", 770, 550, 754, 482)
   countries[17] = new Country("Macedonia", "images/Macedonia.png", 547, 369, 472, 333)
   countries[18] = new Country("Mauritania", "images/Mauritania.png", 158, 528, 59, 486)
   countries[19] = new Country("Pannonia", "images/Pannonia.png", 466, 307, 323, 260)
@@ -101,7 +101,7 @@ function draw() {
   }
   //</add the names>
   for (i = 1; i < owners.length; i++) { // loop through the owners
-    owners[i].printTitle(i * (titleSize + 6)) //put the owners in the corner
+    owners[i].printTitle(i * (titleSize + 15)) //put the owners in the corner
   }
 }
 
