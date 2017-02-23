@@ -66,25 +66,23 @@ function setup() {
   //</scale canvas>
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
+  nameInput.parent('game'); //put it in it's place
   AddTeamBtn = createButton("Add Team") //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
+  AddTeamBtn.parent('game'); //put it in it's place
   StrtGmeBtn = createButton("Start Game") //create a button that will add a team and start the game
   StrtGmeBtn.mousePressed(strtGme) // if the button is pressed make a team with the team name entered and start the game
-  infoP = createP("")
+  StrtGmeBtn.parent('game'); //put it in it's place
+  infoP = createP("") //make a paragraph to show to the user
+  infoP.parent('game'); //put it in it's place
   canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y + 5); // make a canvas the size of the image, 5 is needed because bugs
   canvas.hide() //hide the canvas, will be shown when game starts
-    //<put the DOM in their place>
-  nameInput.parent("game");
-  StrtGmeBtn.parent("game");
-  AddTeamBtn.parent("game");
-  canvas.parent("game");
-  infoP.parent("game");
-  //</put the DOM in their place>
+  canvas.parent('game'); //put it in it's place
   //</mess with the DOM stuff>
   //<housekeeping>
   titleSize = 20 // set the title size
-  angleMode(DEGREES) //make my head hurt less
-    //<end housekeeping>
+  angleMode(DEGREES); //make my head hurt less
+  //</housekeeping>
 }
 
 function draw() {
