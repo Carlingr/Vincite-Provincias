@@ -73,8 +73,15 @@ function setup() {
   infoP = createP("")
   canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y + 5); // make a canvas the size of the image, 5 is needed because bugs
   canvas.hide() //hide the canvas, will be shown when game starts
-    //</mess with the DOM stuff>
-    //<housekeeping>
+    //<put the DOM in their place>
+  nameInput.parent("game");
+  StrtGmeBtn.parent("game");
+  AddTeamBtn.parent("game");
+  canvas.parent("game");
+  infoP.parent("game");
+  //</put the DOM in their place>
+  //</mess with the DOM stuff>
+  //<housekeeping>
   titleSize = 20 // set the title size
   angleMode(DEGREES) //make my head hurt less
     //<end housekeeping>
