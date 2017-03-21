@@ -1,6 +1,8 @@
 function mousePressed() { //when the mouse is pressed
-  for (var i = 0; i < countries.length; i++) { //go through the countries
-    countries[i].invade() //if a country is clicked, invade it.
+  if (countries) {
+    for (var i = 0; i < countries.length; i++) { //go through the countries
+      countries[i].invade() //if a country is clicked, invade it.
+    }
   }
 }
 
