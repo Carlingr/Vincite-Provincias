@@ -15,7 +15,16 @@
       "txtX": 860,
       "txtY": 464,
       "imgX": 681,
-      "imgY": 288,
+      "imgY": 283,
+      "owner": 0
+    },
+    {
+      "name": "Brittania",
+      "imagepath" : "images/Britn.png",
+      "txtX": 180,
+      "txtY": 194,
+      "imgX": 113,
+      "imgY": 106,
       "owner": 0
     },
     {
@@ -30,10 +39,19 @@
     {
       "name": "Corsica",
       "imagepath" : "images/Corsica.png",
-      "txtX": 728,
-      "txtY": 512,
-      "imgX": 713,
-      "imgY": 503,
+      "txtX": 344,
+      "txtY": 392,
+      "imgX": 338,
+      "imgY": 376,
+      "owner": 0
+    },
+    {
+      "name": "Crete",
+      "imagepath" : "images/Crete.png",
+      "txtX": 592,
+      "txtY": 511,
+      "imgX": 574,
+      "imgY": 501,
       "owner": 0
     },
     {
@@ -43,6 +61,15 @@
       "txtY": 601,
       "imgX": 296,
       "imgY": 477,
+      "owner": 0
+    },
+    {
+      "name": "Cyprus",
+      "imagepath" : "images/Cyprus.png",
+      "txtX": 728,
+      "txtY": 512,
+      "imgX": 713,
+      "imgY": 503,
       "owner": 0
     },
     {
@@ -111,8 +138,8 @@
     {
       "name": "Italia",
       "imagepath" : "images/Italia.png",
-      "txtX": 395,
-      "txtY": 374,
+      "txtX": 428,
+      "txtY": 402,
       "imgX": 308,
       "imgY": 297,
       "owner": 0
@@ -164,7 +191,7 @@
     },
     {
       "name": "Sicilia",
-      "imagepath" : "images/Sardinia.png",
+      "imagepath" : "images/Sicilia.png",
       "txtX": 424,
       "txtY": 474,
       "imgX": 399,
