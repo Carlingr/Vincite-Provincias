@@ -33,15 +33,8 @@ function newTeam() { //make a new team
 function countriesLoaded(countJason) {
   countries = countJason.countries;
   for (var i = 0; i < countries.length; i++) {
-    countries.invade = function() { // called when mousePressed
-      if ((abs(mouseX - ((this.txtX + loc.x) * loc.scle)) < textWidth(this.name) / 2) && (abs(mouseY - ((this.txtY + loc.y) * loc.scle)) < titleSize)) {
-        //if the mouse is over the title, easier then defining if the mouse is in the country, and works as well
-        this.owner++; //cycle through the owners
-        if (this.owner > owners.length - 1) { // restart if we have run out of owners
-          this.owner = 0
-        }
-      }
-    }
+    countries[i].img = loadImage(countries[i].imagepath)
   }
-  console.log(countries)
+  owners = countJason.owners;
+  loaded=true
 }

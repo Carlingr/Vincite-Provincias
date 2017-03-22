@@ -18,6 +18,7 @@ var AddTeamBtn
 var canvas
 var infoP
   //<variabes for holding DOM elements>
+var loaded = false;
 
 function preload() {
   back = loadImage('images/Bckgrnd.png');
@@ -28,7 +29,6 @@ function preload() {
   I found imgX,imgY by first cropping the image to the bottom, left of the country, then noting the image size.
   I then crop the country, and note the diffrence in size. this is the imgX,imgY
   */
-    owners[0] = new Owner("Unowned", "white") // creates an Owner that can be given to unowned countries
 }
 
 function setup() {
@@ -62,13 +62,13 @@ function setup() {
 }
 
 function draw() {
-  if (countries) {
+  if (loaded) {
     scale(loc.scle) // set the scale to the scale determined
     noTint() //make sure the back is not tinted
     image(back, loc.x, loc.y) //put a map up
       //<add the countries>
     for (var i = 0; i < countries.length; i++) {
-      tint(owners[countries[i].owner].col) //mkae the country the color of its owner
+      tint(owners[countries[i].owner].col) //make the country the color of its owner
       image(countries[i].img, countries[i].imgX + loc.x, countries[i].imgY + loc.x) //add the country
     }
     //<add the countries>
@@ -83,7 +83,10 @@ function draw() {
     }
     //</add the names>
     for (i = 1; i < owners.length; i++) { // loop through the owners
-      owners[i].printTitle(i * (titleSize + 15)) //put the owners in the corner
+      textSize(titleSize + 15); // make the text bigger
+      fill(owners[i].col) //fill with the color of the team
+      textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
+      text(owners[i].name, (width / loc.scle) - 15, i * (titleSize + 15) + (loc.scle * 5) + 10) //whats your name man?
     }
   }
 }
