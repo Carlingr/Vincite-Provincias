@@ -17,7 +17,7 @@ function strtGme() { //start the game
 }
 
 function newTeam() { //make a new team
-  var colors = ["red", "orange", "green", "purple"] // Introuduce RO G IV
+  var colors = ["red", "orange", "green", "purple"] // Introuduce RO G V
     //no blue because blue is the same color used for rivers
     //no yellow because it is too hard to see
   if (owners.length <= colors.length) { //if we have NOT run out of colors
@@ -30,11 +30,12 @@ function newTeam() { //make a new team
   }
 }
 
-function countriesLoaded(countJason) {
-  countries = countJason.countries;
-  for (var i = 0; i < countries.length; i++) {
-    countries[i].img = loadImage(countries[i].imagepath)
-  }
-  owners = countJason.owners;
-  loaded=true
+function JSONLoaded(jason) {
+  countries = jason.countries;
+  loaded++;
+}
+
+function imgLoaded(img){
+  back=img;
+  loaded++;
 }

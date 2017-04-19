@@ -1,15 +1,15 @@
 var back; //this holds the background image
 var countries; //this holds the countries (see from line 27)
 var owners = []; //this holds the teams that are playing
-var loc = { // these are used to scale to screen
+var titleSize = 75;
+/*var loc = { // these are used to scale to screen
   x: -20,
   y: -25,
   scle: 1
-};
-var titleSize //how big the text will be
+};*/
 
-var backWidth = 992;
-var backHeight = 687;
+var backWidth = 2235; //width of the image
+var backHeight = 1627; //height of the image
 
 //<variabes for holding DOM elements>, used in setup
 var nameInput
@@ -18,27 +18,21 @@ var AddTeamBtn
 var canvas
 var infoP
   //<variabes for holding DOM elements>
-var loaded = false;
+var loaded = 0; // is the JSON loaded yet?
 
 function preload() {
-  back = loadImage('images/Bckgrnd.png');
-  /*<load country images and create objects for countries>
-  input is the following: (name(string), image path(string), Text x location(int), text y location (int), image x location(int), image y location (int))
-  txtX,txyY coordanates will be the center of the place the country name is displayed, and will be used to determine if the country is clicked.
-  I found the txtX,txtY by using mouseX and mouseY, and fine tuning it from there.
-  I found imgX,imgY by first cropping the image to the bottom, left of the country, then noting the image size.
-  I then crop the country, and note the diffrence in size. this is the imgX,imgY
-  */
+  owners.push(new Owner("Unowned", "white")); //holds this for the JSON file, MUST HAPPEN BEFORE USER INPUT
 }
 
 function setup() {
-  loadJSON("countries.json", countriesLoaded);
+  loadJSON("countries.json", JSONLoaded);
+  loadImage('back.png', imgLoaded);
   //<scale canvas>
-  if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
-    loc.scle = windowWidth / backWidth; // use the width to determine the scale
-  } else { //if the limiting dimention is height
-    loc.scle = windowHeight / backHeight; // use the height to determine the scale
-  }
+  /* if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
+     loc.scle = windowWidth / backWidth; // use the width to determine the scale
+   } else { //if the limiting dimention is height
+     loc.scle = windowHeight / backHeight; // use the height to determine the scale
+   }*/
   //</scale canvas>
   //<mess with the DOM stuff>
   nameInput = createInput("Enter team name") //create an input for the team names
@@ -51,42 +45,34 @@ function setup() {
   StrtGmeBtn.parent('game'); //put it in it's place
   infoP = createP("") //make a paragraph to show to the user
   infoP.parent('game'); //put it in it's place
-  canvas = createCanvas((backWidth * loc.scle) + loc.x, (backHeight * loc.scle) + loc.y + 5); // make a canvas the size of the image, 5 is needed because bugs
-  canvas.hide() //hide the canvas, will be shown when game starts
+  canvas = createCanvas(backWidth, backHeight); // make a canvas the size of the image, 5 is needed because bugs
   canvas.parent('game'); //put it in it's place
+  canvas.hide(); //hide the canvas, will be shown when game starts
   //</mess with the DOM stuff>
   //<housekeeping>
-  titleSize = 20 // set the title size
   angleMode(DEGREES); //make my head hurt less
   //</housekeeping>
 }
 
 function draw() {
-  if (loaded) {
-    scale(loc.scle) // set the scale to the scale determined
-    noTint() //make sure the back is not tinted
-    image(back, loc.x, loc.y) //put a map up
-      //<add the countries>
-    for (var i = 0; i < countries.length; i++) {
-      tint(owners[countries[i].owner].col) //make the country the color of its owner
-      image(countries[i].img, countries[i].imgX + loc.x, countries[i].imgY + loc.x) //add the country
+  if (loaded >= 2) { //if both the JSON and the background are loaded
+    //<add the countries>
+    for (var i = 0; i < countries.length; i++) { //loop through the countries
+      fill(owners[countries[i].owner].col)
+      noStroke();
+      beginShape();
+      for (var j = 0; j < countries[i].path.length; j++) {
+        vertex(countries[i].path[j].x, countries[i].path[j].y);
+      }
+      endShape(CLOSE);
     }
     //<add the countries>
-    //Loops are seperated so that countres do not cover other countries names
-    //<add the names>
-    fill("Black") //fill with black
-    noStroke() //get rid of the stroke
-    textSize(titleSize); //make the text size
-    textAlign(CENTER, CENTER) //make the text centered
-    for (i = 0; i < countries.length; i++) { // loop through the countries
-      text(countries[i].name, countries[i].txtX + loc.x, countries[i].txtY + loc.y) //put the name on top of the country
-    }
-    //</add the names>
+    image(back, 0, 0) //put a map up
     for (i = 1; i < owners.length; i++) { // loop through the owners
-      textSize(titleSize + 15); // make the text bigger
+      textSize(titleSize); // make the text bigger
       fill(owners[i].col) //fill with the color of the team
       textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
-      text(owners[i].name, (width / loc.scle) - 15, i * (titleSize + 15) + (loc.scle * 5) + 10) //whats your name man?
+      text(owners[i].name, width - 30, (i * titleSize) + 200) //whats your name man?
     }
   }
 }
