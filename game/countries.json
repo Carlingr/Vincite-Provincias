@@ -2,6 +2,7 @@
   "countries":[
   {
     "name":"Aegyptus",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -1618,6 +1619,7 @@
   },
   {
     "name":"Arabia Petria",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -2850,6 +2852,7 @@
   },
   {
     "name":"Iudeia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -3314,6 +3317,7 @@
   },
   {
     "name":"Siria",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -4450,6 +4454,7 @@
   },
   {
     "name":"Mesopotamia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -6066,6 +6071,7 @@
   },
   {
     "name":"Assira",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -6938,6 +6944,7 @@
   },
   {
     "name":"Armenia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -8098,6 +8105,7 @@
   },
   {
     "name":"Capadocia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -9426,6 +9434,7 @@
   },
   {
     "name":"Cilicia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -10130,6 +10139,7 @@
   },
   {
     "name":"Chipre",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -10738,6 +10748,7 @@
   },
   {
     "name":"Galacia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -11658,6 +11669,7 @@
   },
   {
     "name":"Bitinia E Ponto",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -12698,6 +12710,7 @@
   },
   {
     "name":"Asia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -13786,6 +13799,7 @@
   },
   {
     "name":"LiciaEPanfilia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -14562,6 +14576,7 @@
   },
   {
     "name":"Acaia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -16274,6 +16289,7 @@
   },
   {
     "name":"Macedonia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -17410,6 +17426,7 @@
   },
   {
     "name":"Creta",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -17898,6 +17915,7 @@
   },
   {
     "name":"Epiro",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -18602,6 +18620,7 @@
   },
   {
     "name":"Tracia",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -19330,6 +19349,7 @@
   },
   {
     "name":"MesiaInferior",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -20898,6 +20918,7 @@
   },
   {
     "name":"ReinoDoBosforo",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -21890,6 +21911,7 @@
   },
   {
     "name":"Dacia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -22834,6 +22856,7 @@
   },
   {
     "name":"MesiaSuperior",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -23586,6 +23609,7 @@
   },
   {
     "name":"Dalmacia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -24722,6 +24746,7 @@
   },
   {
     "name":"PanoniaInferior",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -25546,6 +25571,7 @@
   },
   {
     "name":"PanoniaSuperior",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -26370,6 +26396,7 @@
   },
   {
     "name":"Norica",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -26978,6 +27005,7 @@
   },
   {
     "name":"Recia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -27778,6 +27806,7 @@
   },
   {
     "name":"GermaniaSuprior",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -28578,6 +28607,7 @@
   },
   {
     "name":"Italia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -31298,6 +31328,7 @@
   },
   {
     "name":"AlpesMaritimos",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -31618,6 +31649,7 @@
   },
   {
     "name":"AlpesCotios",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -31938,6 +31970,7 @@
   },
   {
     "name":"AlpesPeninos",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -32354,6 +32387,7 @@
   },
   {
     "name":"GermaniaInferior",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -33082,6 +33116,7 @@
   },
   {
     "name":"Caledonia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -34530,6 +34565,7 @@
   },
   {
     "name":"Hibernia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -36290,6 +36326,7 @@
   },
   {
     "name":"Britania",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -38578,6 +38615,7 @@
   },
   {
     "name":"Belgica",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -39426,6 +39464,7 @@
   },
   {
     "name":"Lugdunense",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -41234,6 +41273,7 @@
   },
   {
     "name":"Aquitania",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -42514,6 +42554,7 @@
   },
   {
     "name":"Narbonense",
+    "wall":false,
     "path":[
   {
     "p5": {
@@ -43818,6 +43859,7 @@
   },
   {
     "name":"Tarraconense",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -46106,6 +46148,7 @@
   },
   {
     "name":"Sardenha",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -46810,6 +46853,7 @@
   },
   {
     "name":"Corsega",
+    "wall":false,
     "path":  [
   {
     "p5": {
@@ -47346,6 +47390,7 @@
   },
   {
     "name":"Sicilia",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -48074,6 +48119,7 @@
   },
   {
     "name":"Lusitania",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -49330,6 +49376,7 @@
   },
   {
     "name":"Betica",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -50394,6 +50441,7 @@
   },
   {
     "name":"MautitaniaTingitana",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -51650,6 +51698,7 @@
   },
   {
     "name":"MauritaniaCesariense",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -52786,6 +52835,7 @@
   },
   {
     "name":"Cirenaica",
+    "wall":false,
     "path":[
     {
       "p5": {
@@ -53922,6 +53972,7 @@
   },
   {
     "name":"Africa Proconsular",
+    "wall":false,
     "path":[
   {
     "p5": {
