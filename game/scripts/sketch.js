@@ -21,7 +21,7 @@ var infoP
 var loaded = 0; // is the JSON loaded yet?
 
 function preload() {
-  owners.push(new Owner("Unowned", "white")); //holds this for the JSON file, MUST HAPPEN BEFORE USER INPUT
+  owners.push(new Owner("Unowned", "white", "0")); //holds this for the JSON file, MUST HAPPEN BEFORE USER INPUT
 }
 
 function setup() {
