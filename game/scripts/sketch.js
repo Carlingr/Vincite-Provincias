@@ -59,10 +59,10 @@ function draw() {
     //<add the countries>
     for (var i = 0; i < countries.length; i++) { //loop through the countries
       fill(owners[countries[i].owner].col)
-      if (countries[i].wall) {
+      if (countries[i].wall) {//build the wall
         stroke("#ff9100");
         strokeWeight(17);
-      } else {
+      } else {// or dont
         noStroke();
       }
       beginShape();
@@ -74,6 +74,7 @@ function draw() {
     //<add the countries>
     image(back, 0, 0) //put a map up
     for (i = 1; i < owners.length; i++) { // loop through the owners
+      noStroke();
       textSize(titleSize); // make the text bigger
       fill(owners[i].col) //fill with the color of the team
       textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
