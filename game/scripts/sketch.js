@@ -59,7 +59,12 @@ function draw() {
     //<add the countries>
     for (var i = 0; i < countries.length; i++) { //loop through the countries
       fill(owners[countries[i].owner].col)
-      noStroke();
+      if (countries[i].wall) {
+        stroke("#ff9100");
+        strokeWeight(17);
+      } else {
+        noStroke();
+      }
       beginShape();
       for (var j = 0; j < countries[i].path.length; j++) {
         vertex(countries[i].path[j].x, countries[i].path[j].y);
