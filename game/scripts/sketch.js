@@ -73,13 +73,12 @@ function draw() {
     }
     //<add the countries>
     image(back, 0, 0) //put a map up
-    /*Striking this temp.
     for (i = 1; i < owners.length; i++) { // loop through the owners
       noStroke();
       textSize(titleSize); // make the text bigger
       fill(owners[i].col) //fill with the color of the team
       textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
       text(owners[i].name, width - 30, (i * titleSize) + 200) //whats your name man?
-    }*/
+    }
   }
 }
