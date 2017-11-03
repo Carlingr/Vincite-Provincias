@@ -26,7 +26,7 @@ function preload() {
 
 function setup() {
   loadJSON("countries.json", JSONLoaded);
-  loadImage('back.png', imgLoaded);
+  loadImage("img/back.png", imgLoaded);
   //<scale canvas>
   /* if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
      loc.scle = windowWidth / backWidth; // use the width to determine the scale
