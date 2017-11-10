@@ -41,6 +41,6 @@ function bckLoaded(bckimg) {
 }
 
 function shipLoaded(shipimg) {
-  ship.img = shipimg;
+  shipimg = shipimg;
   loaded++;
 }

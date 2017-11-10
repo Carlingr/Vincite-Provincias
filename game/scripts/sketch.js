@@ -18,9 +18,9 @@ var AddTeamBtn
 var canvas
 var infoP;
 //<variabes for holding DOM elements>
-var ship = {
-  ships: []
-}; //holds the ships.
+ships = [] //holds the ships.
+hippos = []; //save the sacred hippos. Yes, really.
+var shipimg //ship svgsc
 var loaded = 0; // is the JSON loaded yet?
 
 function preload() {
@@ -30,7 +30,7 @@ function preload() {
 function setup() {
   loadJSON("countries.json", JSONLoaded);
   loadImage('img/back.png', bckLoaded);
-  loadImage('img/ship.svg', shipLoaded);
+  loadImage('img/ship.png', shipLoaded);
   //<scale canvas>
   /* if (backWidth / backHeight > windowWidth / windowHeight) { //if the limiting dimention is  Width
      loc.scle = windowWidth / backWidth; // use the width to determine the scale
@@ -75,11 +75,7 @@ function draw() {
       }
       endShape(CLOSE);
     }
-    //<add the countries>\
-    for (i = 0; i < ship.ships.length; i++) {
-      tint(owners[ship.ships[i].owner].col);
-      image(ship.img, ship.ships[i].x, ship.ships[i].y);
-    }
+    //</add the countries>
     noTint();
     image(back, 0, 0) //put a map up
     for (i = 1; i < owners.length; i++) { // loop through the owners
@@ -89,5 +85,21 @@ function draw() {
       textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
       text(owners[i].name, width - 30, (i * titleSize) + 200) //whats your name man?
     }
+    //<draw boats>
+    for (i = 0; i < ships.length; i++) { // loop through the ships
+      //tint(owners[ships[i].owner].col)
+      //image(shipimg, ships[i].x, ships[i].y)
+      fill(owners[ships[i].owner].col)
+      triangle(ships[i].x, ships[i].y + 20, ships[i].x + 10, ships[i].y - 20, ships[i].x - 10, ships[i].y - 20); //draw boat
+    }
+    //</draw boats>
+    //<draw hippos>
+    for (i = 0; i < hippos.length; i++) { // loop through the hippos
+      fill(255)
+      stroke(0)
+      strokeWeight(4)
+      ellipse(hippos[i].x, hippos[i].y, 20); //draw boat
+    }
+    //</draw hippos>
   }
 }
