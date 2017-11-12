@@ -49,7 +49,7 @@ function setup() {
   StrtGmeBtn.parent('game'); //put it in it's place
   infoP = createP("") //make a paragraph to show to the user
   infoP.parent('game'); //put it in it's place
-  canvas = createCanvas(backWidth, backHeight); // make a canvas the size of the image, 5 is needed because bugs
+  canvas = createCanvas(backWidth, backHeight); // make a canvas the size of the image
   canvas.parent('game'); //put it in it's place
   canvas.hide(); //hide the canvas, will be shown when game starts
   //</mess with the DOM stuff>
