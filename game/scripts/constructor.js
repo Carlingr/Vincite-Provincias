@@ -8,3 +8,15 @@ function Owner(name, col, points) {
   this.col = col
   this.points = points
 }
+
+function Ship(x, y, owner) {
+  this.x = x
+  this.y = y
+  this.owner = owner
+}
+
+function Hippo(x, y, owner) {
+  this.x = x
+  this.y = y
+  this.owner = owner
+}

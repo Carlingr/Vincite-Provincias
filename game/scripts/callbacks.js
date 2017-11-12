@@ -35,7 +35,12 @@ function JSONLoaded(jason) {
   loaded++;
 }
 
-function imgLoaded(img) {
-  back = img;
+function bckLoaded(bckimg) {
+  back = bckimg;
+  loaded++;
+}
+
+function shipLoaded(shipimg) {
+  shipimg = shipimg;
   loaded++;
 }
