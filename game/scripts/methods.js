@@ -4,22 +4,20 @@ function mousePressed() { //when the mouse is pressed
   if (loaded >= 3) { //if both the JSON and the background are loaded
     for (var i = 0; i < countries.length; i++) { //loop through the countries
       if (collidePointPoly(mouseX, mouseY, countries[i].path)) { //if the country has been clicked
-        box = prompt("You have cliked " + countries[i].name + ". To invade, enter the team name, to build a wall, enter \"wall\",to build a hippo, enter \"hippo\"", ""); //get an instruction
+        box = prompt("You have clicked " + countries[i].name + ". To invade, enter the team name, to build a wall, enter \"wall\",to build a hippo, enter \"hippo\",to build a crocodile, enter \"croc\"", ""); //get an instruction
         clicked = true; //we have clicked a country
         if (box) {
           if (box.toLowerCase() == "hippo") {
-            hippos.push(new Hippo(mouseX,mouseY,countries[i].owner))
-            console.log(hippos)
+            hippos.push(new Hippo(mouseX, mouseY, countries[i].owner))
+          } else if (box.toLowerCase() == "croc") {
+            crocs.push(new Croc(mouseX, mouseY, countries[i].owner))
           } else if (box.toLowerCase() == "wall") { //if they entered wall
             countries[i].wall = true //build a wall
-          } else if (countries[i].wall) { //if there is a wall
+          } //clearly someone wants to invade
+          else if (countries[i].wall) { //if there is a wall
             countries[i].wall = false //knock over the wall
           } else { //if there is no wall
-            for (var j = 0; j < owners.length; j++) { //go through the owners
-              if (owners[j].name.toLowerCase() == box.toLowerCase()) { //is it this one?
-                countries[i].owner = j; //change owners
-              }
-            }
+            countries[i].owner = whichOwner(box); //change owners
           }
         }
       }
@@ -32,12 +30,7 @@ function mousePressed() { //when the mouse is pressed
       box = prompt("You have clicked the ocean, to make a boat, enter a team name", ""); //get an instruction
       clicked = true; //we have clicked the ocean
       if (box) {
-        for (j = 0; j < owners.length; j++) { //go through the owners
-          if (owners[j].name.toLowerCase() == box.toLowerCase()) { //is it this one?
-            ships.push(new Ship(mouseX, mouseY, j)); //change owners
-            console.log(ships);
-          }
-        }
+        ships.push(new Ship(mouseX, mouseY, whichOwner(box))); //change owners
       }
     }
   }
