@@ -20,6 +20,7 @@ var infoP;
 //<variabes for holding DOM elements>
 ships = [] //holds the ships.
 hippos = []; //save the sacred hippos. Yes, really.
+crocs = []; //save the sacred hippos. Yes, really.
 var shipimg //ship svgsc
 var loaded = 0; // is the JSON loaded yet?
 
@@ -64,7 +65,7 @@ function draw() {
     for (var i = 0; i < countries.length; i++) { //loop through the countries
       fill(owners[countries[i].owner].col)
       if (countries[i].wall) { //build the wall
-        stroke("#ff9100");
+        stroke("#AA6600");
         strokeWeight(17);
       } else { // or dont
         noStroke();
@@ -97,9 +98,27 @@ function draw() {
     for (i = 0; i < hippos.length; i++) { // loop through the hippos
       fill(255)
       stroke(0)
-      strokeWeight(4)
+      strokeWeight(2)
       ellipse(hippos[i].x, hippos[i].y, 20); //draw boat
     }
     //</draw hippos>
+    //<draw crocs>
+    for (i = 0; i < crocs.length; i++) { // loop through the hippos
+      fill("green")
+      stroke(0)
+      strokeWeight(2)
+      ellipse(crocs[i].x, crocs[i].y, 20, 40); //draw boat
+    }
+    //</draw crocs>
   }
+}
+
+function whichOwner(input) { //takes the name of the country typed and turns it into an index number.
+  for (var j = 0; j < owners.length; j++) { //go through the owners
+    if (owners[j].name.toLowerCase() == input.toLowerCase()) { //is it this one?
+      return (j); //found it
+    }
+  }
+  alert("The country could not be found");
+  return (0) // no dice, ergo unowned
 }

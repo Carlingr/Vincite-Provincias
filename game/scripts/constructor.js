@@ -20,3 +20,9 @@ function Hippo(x, y, owner) {
   this.y = y
   this.owner = owner
 }
+
+function Croc(x, y, owner) {
+  this.x = x
+  this.y = y
+  this.owner = owner
+}

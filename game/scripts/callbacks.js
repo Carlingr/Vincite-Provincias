@@ -17,7 +17,7 @@ function strtGme() { //start the game
 }
 
 function newTeam() { //make a new team
-  var colors = ["#4a0000", "#331f00", "#022a00", "#05002d", "#2c002d"] // Introuduce Colors
+  var colors = ["red", "yellow", "green", "blue", "purple"] // Introuduce Colors
     //no blue because blue is the same color used for rivers
     //no yellow because it is too hard to see
   if (owners.length <= colors.length) { //if we have NOT run out of colors
