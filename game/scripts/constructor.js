@@ -9,20 +9,9 @@ function Owner(name, col, points) {
   this.points = points
 }
 
-function Ship(x, y, owner) {
+function Thing(x, y, owner, type) {
   this.x = x
   this.y = y
   this.owner = owner
-}
-
-function Hippo(x, y, owner) {
-  this.x = x
-  this.y = y
-  this.owner = owner
-}
-
-function Croc(x, y, owner) {
-  this.x = x
-  this.y = y
-  this.owner = owner
+  this.type = type
 }
