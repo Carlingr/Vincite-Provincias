@@ -8,9 +8,9 @@ function mousePressed() { //when the mouse is pressed
         clicked = true; //we have clicked a country
         if (box) {
           if (box.toLowerCase() == "hippo") {
-            hippos.push(new Hippo(mouseX, mouseY, countries[i].owner))
+            things.push(new Thing(mouseX, mouseY, countries[i].owner, "hippo"))
           } else if (box.toLowerCase() == "croc") {
-            crocs.push(new Croc(mouseX, mouseY, countries[i].owner))
+            things.push(new Thing(mouseX, mouseY, countries[i].owner, "croc"))
           } else if (box.toLowerCase() == "wall") { //if they entered wall
             countries[i].wall = true //build a wall
           } //clearly someone wants to invade
@@ -30,7 +30,7 @@ function mousePressed() { //when the mouse is pressed
       box = prompt("You have clicked the ocean, to make a boat, enter a team name", ""); //get an instruction
       clicked = true; //we have clicked the ocean
       if (box) {
-        ships.push(new Ship(mouseX, mouseY, whichOwner(box))); //change owners
+        things.push(new Thing(mouseX, mouseY, whichOwner(box), "boat")); //change owners
       }
     }
   }
