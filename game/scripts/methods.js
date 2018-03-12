@@ -4,13 +4,13 @@ function mousePressed() { //when the mouse is pressed
   if (loaded >= 3) { //if both the JSON and the background are loaded
     for (var i = 0; i < countries.length; i++) { //loop through the countries
       if (collidePointPoly(mouseX, mouseY, countries[i].path)) { //if the country has been clicked
-        box = prompt("You have clicked " + countries[i].name + ". To invade, enter the team name, to build a wall, enter \"wall\",to build a hippo, enter \"hippo\",to build a crocodile, enter \"croc\"", ""); //get an instruction
+        box = prompt("You have clicked " + countries[i].name + ". Enter a team name to invade, or build one of the following - \"wall\", \"hippo\", or \"croc\" by entering it in the box below.", ""); //get an instruction
         clicked = true; //we have clicked a country
         if (box) {
           if (box.toLowerCase() == "hippo") {
-            hippos.push(new Hippo(mouseX, mouseY, countries[i].owner))
+            things.push(new Thing(mouseX, mouseY, countries[i].owner, "hippo"))
           } else if (box.toLowerCase() == "croc") {
-            crocs.push(new Croc(mouseX, mouseY, countries[i].owner))
+            things.push(new Thing(mouseX, mouseY, countries[i].owner, "croc"))
           } else if (box.toLowerCase() == "wall") { //if they entered wall
             countries[i].wall = true //build a wall
           } //clearly someone wants to invade
@@ -30,7 +30,7 @@ function mousePressed() { //when the mouse is pressed
       box = prompt("You have clicked the ocean, to make a boat, enter a team name", ""); //get an instruction
       clicked = true; //we have clicked the ocean
       if (box) {
-        ships.push(new Ship(mouseX, mouseY, whichOwner(box))); //change owners
+        things.push(new Thing(mouseX, mouseY, whichOwner(box), "boat")); //change owners
       }
     }
   }

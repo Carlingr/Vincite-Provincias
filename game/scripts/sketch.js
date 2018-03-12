@@ -18,9 +18,7 @@ var AddTeamBtn
 var canvas
 var infoP;
 //<variabes for holding DOM elements>
-ships = [] //holds the ships.
-hippos = []; //save the sacred hippos. Yes, really.
-crocs = []; //save the sacred hippos. Yes, really.
+var things = [];
 var shipimg //ship svgsc
 var loaded = 0; // is the JSON loaded yet?
 
@@ -86,30 +84,26 @@ function draw() {
       textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
       text(owners[i].name, width - 30, (i * titleSize) + 200) //whats your name man?
     }
-    //<draw boats>
-    for (i = 0; i < ships.length; i++) { // loop through the ships
-      //tint(owners[ships[i].owner].col)
-      //image(shipimg, ships[i].x, ships[i].y)
-      fill(owners[ships[i].owner].col)
-      triangle(ships[i].x, ships[i].y + 20, ships[i].x + 10, ships[i].y - 20, ships[i].x - 10, ships[i].y - 20); //draw boat
+    for (i = 0; i < things.length; i++) { // loop through the things that go over the map
+      drawThing(things[i].x, things[i].y, things[i].owner, things[i].type) //draw each thing
     }
-    //</draw boats>
-    //<draw hippos>
-    for (i = 0; i < hippos.length; i++) { // loop through the hippos
-      fill(255)
-      stroke(0)
-      strokeWeight(2)
-      ellipse(hippos[i].x, hippos[i].y, 20); //draw boat
-    }
-    //</draw hippos>
-    //<draw crocs>
-    for (i = 0; i < crocs.length; i++) { // loop through the hippos
-      fill("green")
-      stroke(0)
-      strokeWeight(2)
-      ellipse(crocs[i].x, crocs[i].y, 20, 40); //draw boat
-    }
-    //</draw crocs>
+  }
+}
+
+function drawThing(x, y, owner, type) { //takes the x,y coordinate, who owns it (only used for ships rn, but capibility is good), and what to draw
+  noStroke(); //looks better when the shapes have no edges
+  switch (type) {
+    case "croc": //should we draw a croc?
+      fill("green") //crocs are green
+      ellipse(x, y, 20, 40); //oval
+      break;
+    case "hippo": //how about a hippo
+      fill(100) //grey
+      ellipse(x, y, 20); //circle
+      break;
+    case "boat": //it's a boat
+      fill(owners[owner].col) //fill with the owner, since it won't be associated with a country
+      triangle(x, y + 20, x + 10, y - 20, x - 10, y - 20); //makes a triangle
   }
 }
 
