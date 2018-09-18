@@ -12,14 +12,14 @@ var backWidth = 2235; //width of the image
 var backHeight = 1627; //height of the image
 
 //<variabes for holding DOM elements>, used in setup
-var nameInput
-var StrtGmeBtn
-var AddTeamBtn
-var canvas
+var nameInput;
+var StrtGmeBtn;
+var AddTeamBtn;
+var canvas;
 var infoP;
 //<variabes for holding DOM elements>
 var things = [];
-var shipimg //ship svgsc
+var shipimg; //ship svgsc
 var loaded = 0; // is the JSON loaded yet?
 
 function preload() {
@@ -38,15 +38,15 @@ function setup() {
    }*/
   //</scale canvas>
   //<mess with the DOM stuff>
-  nameInput = createInput("Enter team name") //create an input for the team names
+  nameInput = createInput("Enter team name"); //create an input for the team names
   nameInput.parent('game'); //put it in it's place
-  AddTeamBtn = createButton("Add Team") //create a button that just adds the team
+  AddTeamBtn = createButton("Add Team"); //create a button that just adds the team
   AddTeamBtn.mousePressed(newTeam); // if the button is pressed make a team with the team name entered
   AddTeamBtn.parent('game'); //put it in it's place
-  StrtGmeBtn = createButton("Start Game") //create a button that will add a team and start the game
-  StrtGmeBtn.mousePressed(strtGme) // if the button is pressed make a team with the team name entered and start the game
+  StrtGmeBtn = createButton("Start Game"); //create a button that will add a team and start the game
+  StrtGmeBtn.mousePressed(strtGme); // if the button is pressed make a team with the team name entered and start the game
   StrtGmeBtn.parent('game'); //put it in it's place
-  infoP = createP("") //make a paragraph to show to the user
+  infoP = createP(""); //make a paragraph to show to the user
   infoP.parent('game'); //put it in it's place
   canvas = createCanvas(backWidth, backHeight); // make a canvas the size of the image
   canvas.parent('game'); //put it in it's place
@@ -61,7 +61,7 @@ function draw() {
   if (loaded >= 3) { //if both the JSON and the background are loaded
     //<add the countries>
     for (var i = 0; i < countries.length; i++) { //loop through the countries
-      fill(owners[countries[i].owner].col)
+      fill(owners[countries[i].owner].col);
       if (countries[i].wall) { //build the wall
         stroke("#AA6600");
         strokeWeight(17);
@@ -76,43 +76,48 @@ function draw() {
     }
     //</add the countries>
     noTint();
-    image(back, 0, 0) //put a map up
+    image(back, 0, 0); //put a map up
     for (i = 1; i < owners.length; i++) { // loop through the owners
       noStroke();
       textSize(titleSize); // make the text bigger
-      fill(owners[i].col) //fill with the color of the team
-      textAlign(RIGHT, BOTTOM) // mkae the text go where it belongs
-      text(owners[i].name, width - 30, (i * titleSize) + 200) //whats your name man?
+      fill(owners[i].col); //fill with the color of the team
+      textAlign(RIGHT, BOTTOM); // mkae the text go where it belongs
+      text(owners[i].name, width - 30, (i * titleSize) + 200); //whats your name man?
     }
     for (i = 0; i < things.length; i++) { // loop through the things that go over the map
-      drawThing(things[i].x, things[i].y, things[i].owner, things[i].type) //draw each thing
+      drawThing(things[i].x, things[i].y, things[i].owner, things[i].type); //draw each thing
     }
   }
 }
 
-function drawThing(x, y, owner, type) { //takes the x,y coordinate, who owns it (only used for ships rn, but capibility is good), and what to draw
+function drawThing(x, y, owner, type) {
+  //takes the x,y coordinate, who owns it (only used for ships rn,
+  //but capibility is good), and what to draw
   noStroke(); //looks better when the shapes have no edges
   switch (type) {
     case "croc": //should we draw a croc?
-      fill("green") //crocs are green
+      fill("green"); //crocs are green
       ellipse(x, y, 20, 40); //oval
       break;
     case "hippo": //how about a hippo
-      fill(100) //grey
+      fill(100); //grey
       ellipse(x, y, 20); //circle
       break;
     case "boat": //it's a boat
-      fill(owners[owner].col) //fill with the owner, since it won't be associated with a country
+      fill(owners[owner].col); //fill with the owner, since it won't
+      //be associated with a country
       triangle(x, y + 20, x + 10, y - 20, x - 10, y - 20); //makes a triangle
   }
 }
 
-function whichOwner(input) { //takes the name of the country typed and turns it into an index number.
+function whichOwner(input) {
+  //takes the name of the country typed and turns it into an index number.
   for (var j = 0; j < owners.length; j++) { //go through the owners
-    if (owners[j].name.toLowerCase() == input.toLowerCase()) { //is it this one?
+    if (owners[j].name.toLowerCase() == input.toLowerCase()) {
+      //is it this one?
       return (j); //found it
     }
   }
   alert("The country could not be found");
-  return (0) // no dice, ergo unowned
+  return (0); // no dice, ergo unowned
 }
