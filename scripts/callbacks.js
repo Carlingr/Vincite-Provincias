@@ -12,19 +12,19 @@ function strtGme() { //start the game
   StrtGmeBtn.remove();
   AddTeamBtn.remove();
   infoP.remove();
-    //</get rid of the input garbage>
+  //</get rid of the input garbage>
   canvas.show(); //show us the board
 }
 
 function newTeam() { //make a new team
   var colors = ["red", "yellow", "green", "blue", "purple"] // Introuduce Colors
-    //no blue because blue is the same color used for rivers
-    //no yellow because it is too hard to see
+  //no blue because blue is the same color used for rivers
+  //no yellow because it is too hard to see
   if (owners.length <= colors.length) { //if we have NOT run out of colors
     owners.push(new Owner(nameInput.value(), colors[owners.length - 1])); // add an owner with the name input
     infoP.html("New team created with the name <b><span style=\"color:" +
-    owners[owners.length - 1].col + ";\">" + nameInput.value() +
-    "</span></b><br>"); //make a paragraph so we know what is going on
+      owners[owners.length - 1].col + ";\">" + nameInput.value() +
+      "</span></b><br>"); //make a paragraph so we know what is going on
 
     nameInput.value("Enter team name"); //reset the input
   } else { //if we HAVE run out of colors
@@ -41,6 +41,7 @@ function JSONLoaded(jason) {
 function bckLoaded(bckimg) {
   back = bckimg;
   loaded++;
+  console.log(backimg)
 }
 
 function shipLoaded(shipimg) {

@@ -15,3 +15,7 @@ function Thing(x, y, owner, type) {
   this.owner = owner
   this.type = type
 }
+
+// class Button{
+//   constructor(label, x1, y1, x2, y2){}
+// }
