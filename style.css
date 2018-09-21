@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
   background-image: url(img/backO.svg);
   background-size: cover;
@@ -43,26 +45,31 @@ footer {
 }
 
 .bubble {
-  margin-left: 20vw;
+  margin-left: 15vw;
   color: black;
   background: white;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 40px;
+  padding-right: 40px;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-radius: 50px;
-  height:185px;
   width: 60vw;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
-.bubble::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 50px 100px 0 0;
-  border-color: white transparent transparent transparent;
-  position: absolute;
-  margin-top: 90px;
-  margin-left: 20px;
+.button{
+  border-radius: 20px;
+  width: 30vw;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  background-color: limegreen;  float: left;
+  margin-left: 0vw;
+  margin-right: 10vw;
+  margin-bottom: 10vw;
+  border: 1px solid black;
+  text-align: center;
 }
