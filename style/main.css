@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background-image: url(../img/backO.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+section#game {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#soldier {
+  vertical-align: text-top;
+  height: 500px;
+  width: 334px;
+  float: left;
+}
+
+footer {
+  flex: 0 1 auto;
+  width: 100%;
+  font-size: 25px;
+}
+
+@media only screen and (min-width: 500px) {
+  footer {
+    font-size: 12px;
+  }
+}
