@@ -2,38 +2,22 @@
 <html>
 
 <head>
-  <title>Vincite Provincias-Game</title>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" type="image/x-icon" href="https://carlingr.github.io/images/logo.ico" />
-
-  <script src="https://carlingr.github.io/script/libraries/p5.js"></script>
-  <script src="https://carlingr.github.io/script/libraries/p5.dom.js"></script>
-  <script src="https://carlingr.github.io/script/libraries/p5.collide2d.js"></script>
-  <script src="https://mveteanu.github.io/p5.SceneManager/lib/scenemanager.js"></script>
-  <script src="https://carlingr.github.io/script/libraries/p5.svg.js"></script>
-
-
-  <link rel="stylesheet" href="https://carlingr.github.io/style/main.css">
-  <link rel="stylesheet" href="https://carlingr.github.io/style/canvas.css">
-
-
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </head>
 
 <body>
-  <section id="game">
-  </section>
-  <footer>
-    <hr />
-    <table class="cntr">
-      <tr>
-        <td>
-          <a href="https://github.com/Carlingr/Vincite-Provincias/issues">
-            Tell me about bugs, or give  me feature requests!</a></td>
-        <td>Hosted with <a href="https://pages.github.com/"> Github Pages </a>
-        </td>
-      </tr>
-    </table>
-  </footer>
+  <div id="typed-strings">
+    <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+    <p>It can type anything you want</p>
+  </div>
+  <span id="typed"></span>
+  <script>
+    var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings',
+      backSpeed: 40,
+      typeSpeed: 40
+    });
+  </script>
 </body>
 
 </html>

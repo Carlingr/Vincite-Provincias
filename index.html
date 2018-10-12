@@ -6,22 +6,25 @@
   <meta charset="UTF-8">
   <link rel="shortcut icon" type="image/x-icon" href="https://carlingr.github.io/images/logo.ico" />
 
-  <!-- <script src="https://carlingr.github.io/script/libraries/p5.js"></script>
+  <script src="https://carlingr.github.io/script/libraries/p5.js"></script>
   <script src="https://carlingr.github.io/script/libraries/p5.dom.js"></script>
   <script src="https://carlingr.github.io/script/libraries/p5.collide2d.js"></script>
   <script src="https://bitcraftlab.github.io/p5.gui/libraries/p5.gui.js"></script>
   <script src="https://bitcraftlab.github.io/p5.gui/libraries/quicksettings.js">
-  </script> Needed by p5.gui
+  </script>
+  <!--Needed by p5.gui-->
   <script src="https://mveteanu.github.io/p5.SceneManager/lib/scenemanager.js">
-</script>
-  <script src="https://carlingr.github.io/script/libraries/p5.svg.js"></script> -->
-
+  </script>
+  <script src="https://carlingr.github.io/script/libraries/p5.svg.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <!--Used for typing animation-->
 
   <link rel="stylesheet" href="https://carlingr.github.io/style/main.css">
   <link rel="stylesheet" href="https://carlingr.github.io/style/canvas.css">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/button.css">
   <link rel="stylesheet" href="style/speechBubble.css">
+  <link rel="stylesheet" href="style/typed.css">
 
   <!-- <script src="scripts/sketch.js"></script>
   <script src="scripts/constructor.js"></script>
@@ -33,8 +36,20 @@
 <body>
   <section id="game">
     <div class="bubble">
-      Salve amicum! <br />
-      Welcome to Vincite Provincias. I'm Optio Julius Quintus Britanus, I'll be guiding you through this game. Are you ready to begin your conquest of the Roman Empire?
+      <div id="typed-strings">
+        <p> Salve amicum! <br>
+          Welcome to Vincite Provincias. <br>
+          I'm Optio Julius Quintus Britanus, and I'll be guiding you through this game.
+          ^30 Are you ready to begin your conquest of the Roman Empire? </p>
+      </div>
+      <span id="typed"></span>
+      <script>
+        var options = {};
+        var typed = new Typed('#typed', {
+          stringsElement: '#typed-strings',
+          typeSpeed: 20
+        });
+      </script>
     </div>
     <table>
       <tr>
@@ -57,6 +72,7 @@
         </td>
         <td>Hosted with <a href="https://pages.github.com/"> Github Pages </a>
         </td>
+        <td>Uses <a href="https://p5js.org/">p5.js</a> and <a href="https://mattboldt.com/demos/typed-js/">typed.js</a></td>
       </tr>
     </table>
   </footer>
