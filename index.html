@@ -9,22 +9,22 @@
   <script src="https://carlingr.github.io/script/libraries/p5.js"></script>
   <script src="https://carlingr.github.io/script/libraries/p5.dom.js"></script>
   <script src="https://carlingr.github.io/script/libraries/p5.collide2d.js"></script>
-  <script src="https://bitcraftlab.github.io/p5.gui/libraries/p5.gui.js"></script>
   <script src="https://bitcraftlab.github.io/p5.gui/libraries/quicksettings.js">
+    //needed by p5.gui
   </script>
-  <!--Needed by p5.gui-->
+  <script src="https://bitcraftlab.github.io/p5.gui/libraries/p5.gui.js"></script>
   <script src="https://mveteanu.github.io/p5.SceneManager/lib/scenemanager.js">
   </script>
   <script src="https://carlingr.github.io/script/libraries/p5.svg.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-  <!--Used for typing animation-->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9">
+    //used for typing animation
+  </script>
 
   <link rel="stylesheet" href="https://carlingr.github.io/style/main.css">
   <link rel="stylesheet" href="https://carlingr.github.io/style/canvas.css">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/button.css">
   <link rel="stylesheet" href="style/speechBubble.css">
-  <link rel="stylesheet" href="style/typed.css">
 
   <!-- <script src="scripts/sketch.js"></script>
   <script src="scripts/constructor.js"></script>
@@ -37,13 +37,16 @@
   <section id="game">
     <div class="bubble">
       <div id="typed-strings">
-        <p> Salve amicum! <br>
-          Welcome to Vincite Provincias. <br>
+        <p> Salvete amici! <br>
+          <!--^30 = 30ms pause-->
+          Welcome to Vincite Provincias. ^30
           I'm Optio Julius Quintus Britanus, and I'll be guiding you through this game.
           ^30 Are you ready to begin your conquest of the Roman Empire? </p>
       </div>
       <span id="typed"></span>
+      <!--leave empty for typed.js-->
       <script>
+        //used to type out the speech bubble
         var options = {};
         var typed = new Typed('#typed', {
           stringsElement: '#typed-strings',
@@ -56,8 +59,8 @@
         <td> <img id="soldier" src="img/soldier.svg"></img>
         </td>
         <td>
-          <div class="button">
-            Begin </div>
+          <a href=# class="button">
+            Begin </a>
         </td>
       </tr>
     </table>
