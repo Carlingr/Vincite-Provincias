@@ -48,9 +48,7 @@ function setup() {
   StrtGmeBtn.parent('game'); //put it in it's place
   infoP = createP("") //make a paragraph to show to the user
   infoP.parent('game'); //put it in it's place
-  canvas = createCanvas(backWidth, backHeight); // make a canvas the size of the image
-  canvas.parent('game'); //put it in it's place
-  canvas.hide(); //hide the canvas, will be shown when game starts
+  canvas = createCanvas(0, 0); // create a zero size canvas so p5 doesn't make one for you
   //</mess with the DOM stuff>
   //<housekeeping>
   angleMode(DEGREES); //make my head hurt less
